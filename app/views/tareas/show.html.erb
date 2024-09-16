@@ -1,0 +1,28 @@
+<p style="color: green"><%= notice %></p>
+
+<p>
+  <strong>Título:</strong>
+  <%= @tarea.titulo %>
+</p>
+
+<p>
+  <strong>Descripción:</strong>
+  <%= @tarea.descripcion %>
+</p>
+
+<p>
+  <strong>Completado:</strong>
+  <%= @tarea.completado ? 'Sí' : 'No' %>
+</p>
+
+<p>
+  <strong>Usuario:</strong>
+  <%= @tarea.usuario.nombre %>
+</p>
+
+<div>
+  <%= link_to "Edit this tarea", edit_tarea_path(@tarea) %> |
+  <%= link_to "Back to tareas", tareas_path %>
+
+  <%= button_to "Destroy this tarea", @tarea, method: :delete %>
+</div>

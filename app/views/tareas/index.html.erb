@@ -1,0 +1,35 @@
+<p style="color: green"><%= notice %></p>
+
+<% content_for :title, "Tareas" %>
+
+<h1>Tareas</h1>
+
+<div id="tareas">
+  <% @tareas.each do |tarea| %>
+    <p>
+      <strong>Título:</strong>
+      <%= tarea.titulo %>
+    </p>
+
+    <p>
+      <strong>Descripción:</strong>
+      <%= tarea.descripcion %>
+    </p>
+
+    <p>
+      <strong>Completado:</strong>
+      <%= tarea.completado ? 'Sí' : 'No' %>
+    </p>
+
+    <p>
+      <strong>Usuario:</strong>
+      <%= tarea.usuario.nombre %>
+    </p>
+
+    <p>
+      <%= link_to "Show this tarea", tarea %>
+    </p>
+  <% end %>
+</div>
+
+<%= link_to "New tarea", new_tarea_path %>
